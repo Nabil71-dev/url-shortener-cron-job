@@ -1,19 +1,13 @@
 const { schedule } =require("@netlify/functions")
-
-// const handler = schedule("* * * * *",async(event) => {
-//     try {
-//         const response = axios.get(`http://localhost:8080/scheduler/expire-urls`);
-//         console.log(response)
-//     } catch (error) {
-//         console.log(error)
-//     }
-// })
-
-// module.exports = { handler }
+const axios = require('axios');
 
 const handler = async function(event, context) {
-    console.log("Schedule function runing")
-    return { statusCode: 200, body: "It's running", status: true };
+        try {
+        const response = axios.get(`https://url-shortner-nabil-be.vercel.app/scheduler/cron-job`);
+        console.log("Successfully done",response)
+    } catch (error) {
+        console.log("Have some error on it",error)
+    }
 };
 
-exports.handler = schedule("* * * * *", handler);
+exports.handler = schedule("*/6 * * * *", handler);
