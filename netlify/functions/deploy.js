@@ -11,8 +11,9 @@ const { schedule } =require("@netlify/functions")
 
 // module.exports = { handler }
 
-const handler = schedule("* * * * *",async(event) => {
+const handler = async function(event, context) {
     console.log("Schedule function runing")
     return { statusCode: 200, body: "It's running", status: true };
-})
-module.exports = { handler }
+};
+
+exports.handler = schedule("* * * * *", handler);
