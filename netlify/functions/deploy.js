@@ -10,4 +10,4 @@ const handler = async function(event, context) {
     }
 };
 
-exports.handler = schedule("*/6 * * * *", handler);
+exports.handler = schedule("59 23 * * *", handler);

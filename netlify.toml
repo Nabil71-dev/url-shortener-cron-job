@@ -1,2 +1,2 @@
 [functions."deploy"]
-schedule = "*/6 * * * *"
+schedule = "59 23 * * *"
