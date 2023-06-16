@@ -1,4 +1,4 @@
-// const { schedule } =require("@netlify/functions")
+const { schedule } =require("@netlify/functions")
 
 // const handler = schedule("* * * * *",async(event) => {
 //     try {
