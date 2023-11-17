@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const handler = async function (event, context) {
     try {
-        const response = axios.get(`https://shortyurl-server.vercel.app/scheduler/cron-job`);
+        const response = axios.get(`https://shorty-urls.vercel.app/scheduler/cron-job`);
         console.log("Successfully done", response)
     } catch (error) {
         console.log("Have some error on it", error)
